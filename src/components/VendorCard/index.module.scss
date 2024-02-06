@@ -1,0 +1,20 @@
+.hero {
+	display: flex;
+	// justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	background-color: lightblue;
+
+	.card {
+		display: flex;
+		justify-content: space-between;
+		background-color: lightcoral;
+		text-align: center;
+		align-items: center;
+		width: 98%;
+		height: 60px;
+		margin: 3px;
+		padding: 0 15px 0 5px;
+	}
+}
