@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import dataForVendors from "../../VendorData";
+// import dataForVendors from "../../VendorDataArray";
 
 const VendorDataForm = () => {
 	return (

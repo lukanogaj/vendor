@@ -1,10 +1,16 @@
 import styles from "./index.module.scss";
-import dataForVendors from "../../VendorData";
+import dataForVendors from "../../VendorDataArray";
 import { ChevronUp, ChevronDown } from "../media/icons";
 import { useState } from "react";
 
 const VendorCard = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	// Function to show div with input and details
+	const handleCard = () => {
+		console.log("Clicked");
+		setIsOpen(!isOpen);
+	};
 	// USe States for filter method
 	// const [filteredVendors, setFilteredVendors] = useState(dataForVendors);
 	// const [vendorId, setVendorId] = useState("");
@@ -20,6 +26,8 @@ const VendorCard = () => {
 			})
 		);
 	});
+
+	console.log(uniqueVendors);
 	// Function to group the obejct with same names
 
 	/// Array of objects nested structure tree
@@ -41,17 +49,13 @@ const VendorCard = () => {
 	console.log(groupedVendors);
 
 	// Function to show div with input and details
-	const handleCard = () => {
-		console.log("Clicked");
-		setIsOpen(!isOpen);
-	};
 
 	return (
-		<div className={styles.hero} onClick={handleCard}>
-			{dataForVendors.map((card) => (
-				<div key={card.id} className={styles.card}>
-					<h3>{card.name}</h3>
-					<ChevronUp />
+		<div className={styles.hero}>
+			{groupedVendors.map((card) => (
+				<div key={card.vendor_id} className={styles.card} onClick={handleCard}>
+					<h3>{card.vendor_name}</h3>
+					<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
 				</div>
 			))}
 		</div>
