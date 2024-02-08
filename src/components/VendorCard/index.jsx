@@ -1,15 +1,15 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
 import { ChevronUp, ChevronDown } from "../media/icons";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-const VendorCard = () => {
-	const [isOpen, setIsOpen] = useState(false);
+const VendorCard = ({ isDone }) => {
+	const [isOpen, setIsOpen] = useState(null);
 
 	// Function to show div with input and details
-	const handleCard = () => {
+	const handleCard = (index) => {
 		console.log("Clicked");
-		setIsOpen(!isOpen);
+		setIsOpen((prevIndex) => (prevIndex === index ? null : index));
 	};
 	// USe States for filter method
 	// const [filteredVendors, setFilteredVendors] = useState(dataForVendors);
@@ -52,8 +52,13 @@ const VendorCard = () => {
 
 	return (
 		<div className={styles.hero}>
-			{groupedVendors.map((card) => (
-				<div key={card.vendor_id} className={styles.card} onClick={handleCard}>
+			{groupedVendors.map((card, index) => (
+				<div
+					key={card.vendor_id}
+					className={styles.card}
+					isDone={isOpen === index}
+					onClick={() => handleCard(index)}
+				>
 					<h3>{card.vendor_name}</h3>
 					<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
 				</div>
