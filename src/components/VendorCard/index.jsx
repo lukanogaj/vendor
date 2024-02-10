@@ -3,19 +3,17 @@ import dataForVendors from "../../VendorDataArray";
 import { ChevronUp, ChevronDown } from "../media/icons";
 import { useState, useRef } from "react";
 
-const VendorCard = ({ isDone }) => {
+const VendorCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
 
-	// Function to show div with input and details
-	const handleCard = (index) => {
+	// Function to change chevron
+	const handleCard = () => {
 		console.log("Clicked");
-		setIsOpen((prevIndex) => (prevIndex === index ? null : index));
+
+		if (card.id === id) {
+			isOpen;
+		}
 	};
-	// USe States for filter method
-	// const [filteredVendors, setFilteredVendors] = useState(dataForVendors);
-	// const [vendorId, setVendorId] = useState("");
-	// const [name, setName] = useState("");
-	// const [group, setGroup] = useState("");
 
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -53,14 +51,9 @@ const VendorCard = ({ isDone }) => {
 	return (
 		<div className={styles.hero}>
 			{groupedVendors.map((card, index) => (
-				<div
-					key={card.vendor_id}
-					className={styles.card}
-					isDone={isOpen === index}
-					onClick={() => handleCard(index)}
-				>
+				<div key={card.vendor_id} className={styles.card} onClick={handleCard}>
 					<h3>{card.vendor_name}</h3>
-					<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
+					<div>{isOpen === index ? <ChevronUp /> : <ChevronDown />}</div>
 				</div>
 			))}
 		</div>
