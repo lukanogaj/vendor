@@ -1,19 +1,16 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
-import { ChevronUp, ChevronDown } from "../media/icons";
+// import { ChevronUp, ChevronDown } from "../media/icons";
+import Card from "../Card";
 import { useState, useRef } from "react";
 
 const VendorCard = () => {
-	const [isOpen, setIsOpen] = useState(null);
+	// const [isOpen, setIsOpen] = useState(null);
 
 	// Function to change chevron
-	const handleCard = () => {
-		console.log("Clicked");
-
-		if (card.id === id) {
-			isOpen;
-		}
-	};
+	// const handleCard = () => {
+	// 	setIsOpen(!isOpen);
+	// };
 
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -27,7 +24,6 @@ const VendorCard = () => {
 
 	console.log(uniqueVendors);
 	// Function to group the obejct with same names
-
 	/// Array of objects nested structure tree
 	const groupedVendors = [];
 	for (const uniq of uniqueVendors) {
@@ -50,10 +46,11 @@ const VendorCard = () => {
 
 	return (
 		<div className={styles.hero}>
-			{groupedVendors.map((card, index) => (
-				<div key={card.vendor_id} className={styles.card} onClick={handleCard}>
-					<h3>{card.vendor_name}</h3>
-					<div>{isOpen === index ? <ChevronUp /> : <ChevronDown />}</div>
+			{groupedVendors.map((card) => (
+				<div key={card.vendor_id} className={styles.classContainer}>
+					<Card vendorName={card.vendor_name}>
+						<h3>{card.vendor_name}</h3>
+					</Card>
 				</div>
 			))}
 		</div>

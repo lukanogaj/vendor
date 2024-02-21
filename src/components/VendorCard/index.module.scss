@@ -6,15 +6,8 @@
 	width: 100%;
 	background-color: lightblue;
 
-	.card {
+	.classContainer {
 		display: flex;
-		justify-content: space-between;
-		background-color: lightcoral;
-		text-align: center;
-		align-items: center;
-		width: 98%;
-		height: 60px;
-		margin: 3px;
-		padding: 0 15px 0 5px;
+		width: 100%;
 	}
 }
