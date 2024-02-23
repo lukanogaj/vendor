@@ -8,4 +8,11 @@
 	height: 60px;
 	margin: 3px;
 	padding: 0 15px 0 5px;
+	cursor: pointer;
+	overflow: hidden;
+
+	.vendorData {
+		display: flex;
+		flex-direction: column;
+	}
 }

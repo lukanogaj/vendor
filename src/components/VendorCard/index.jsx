@@ -1,17 +1,11 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
-// import { ChevronUp, ChevronDown } from "../media/icons";
+import Accordion from "../Accordion";
 import Card from "../Card";
 import { useState, useRef } from "react";
 
 const VendorCard = () => {
-	// const [isOpen, setIsOpen] = useState(null);
-
-	// Function to change chevron
-	// const handleCard = () => {
-	// 	setIsOpen(!isOpen);
-	// };
-
+	const [isOpen, setIsOpen] = useState(null);
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
 		return (
@@ -51,6 +45,9 @@ const VendorCard = () => {
 					<Card vendorName={card.vendor_name}>
 						<h3>{card.vendor_name}</h3>
 					</Card>
+					<div className={styles.vendorData}>
+						<Accordion />
+					</div>
 				</div>
 			))}
 		</div>

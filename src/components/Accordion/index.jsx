@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 // import dataForVendors from "../../VendorDataArray";
 
-const VendorDataForm = () => {
+const Accordion = () => {
 	return (
 		<div className={styles.form}>
 			<div className={styles.dataCard}>
@@ -20,4 +20,4 @@ const VendorDataForm = () => {
 	);
 };
 
-export default VendorDataForm;
+export default Accordion;
