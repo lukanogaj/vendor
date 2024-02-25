@@ -1,8 +1,8 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
-import Accordion from "../Accordion";
-import Card from "../Card";
+// import AccordionItem from "../AccordionItem";
 import { useState, useRef } from "react";
+import AccordionCard from "../AccordionCard";
 
 const VendorCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
@@ -40,14 +40,12 @@ const VendorCard = () => {
 
 	return (
 		<div className={styles.hero}>
-			{groupedVendors.map((card) => (
+			{groupedVendors.map((card, index) => (
 				<div key={card.vendor_id} className={styles.classContainer}>
-					<Card vendorName={card.vendor_name}>
+					<AccordionCard>
 						<h3>{card.vendor_name}</h3>
-					</Card>
-					<div className={styles.vendorData}>
-						<Accordion />
-					</div>
+					</AccordionCard>
+					<div className={styles.vendorData}>{/* <AccordionItem /> */}</div>
 				</div>
 			))}
 		</div>

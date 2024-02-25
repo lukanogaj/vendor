@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 // import dataForVendors from "../../VendorDataArray";
 
-const Accordion = () => {
+const AccordionItem = () => {
 	return (
 		<div className={styles.form}>
 			<div className={styles.dataCard}>
@@ -20,4 +20,4 @@ const Accordion = () => {
 	);
 };
 
-export default Accordion;
+export default AccordionItem;
