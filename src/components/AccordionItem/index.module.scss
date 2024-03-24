@@ -4,8 +4,8 @@
 	height: 100%;
 	width: 98%;
 	border-radius: 4px;
-	align-items: center;
-	align-content: center;
+	// align-items: center;
+	// align-content: center;
 	flex-direction: column;
 	background-color: lightblue;
 	border-bottom-left-radius: 10px;
@@ -24,8 +24,20 @@
 		-moz-border-radius: 4px;
 		-ms-border-radius: 4px;
 		-o-border-radius: 4px;
+
+		label {
+			text-align: left;
+			margin-bottom: 5px;
+		}
 	}
 	input {
 		width: 50%;
+		height: 30px;
+		border: 4px;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		-o-border-radius: 4px;
 	}
 }
