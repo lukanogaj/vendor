@@ -1,9 +1,11 @@
 .hero {
 	display: flex;
-	// justify-content: space-around;
+	justify-content: center;
 	align-items: center;
+	text-align: center;
 	flex-direction: column;
-	width: 98%;
+	margin: auto;
+	width: 100%;
 	background-color: lightblue;
 
 	.classContainer {
@@ -14,6 +16,6 @@
 	.vendorData {
 		display: flex;
 		flex-direction: column;
-		background-color: red;
+		// background-color: red;
 	}
 }

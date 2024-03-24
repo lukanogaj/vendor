@@ -7,21 +7,17 @@ import { ChevronUp, ChevronDown } from "../media/icons";
 
 const AccordionCard = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	// const handleAccordionClick = (index) => {
-	// 	if (index !== isOpen) {
-	// 		setIsOpen(index);
-	// 	} else {
-	// 		setIsOpen(false);
-	// 	}
-	// };
+	const handleChevron = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
 		<div className={styles.accordionContainer}>
-			<div className={styles.card}>
+			<div className={styles.card} onClick={() => handleChevron()}>
 				{children}
 				<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
 			</div>
 
-			{/* {isOpen ? <AccordionItem /> : ""} */}
 		</div>
 	);
 };

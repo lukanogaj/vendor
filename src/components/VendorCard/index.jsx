@@ -39,11 +39,12 @@ const VendorCard = () => {
 	// Function to show div with input and details
 	const [activeIndex, setActiveIndex] = useState(-1);
 	const handleClick = (index) => {
-		setActiveIndex(index === activeIndex ? 0 : index);
+		setActiveIndex(index === activeIndex ? -1 : index);
 	};
 
 	return (
 		<div className={styles.hero}>
+			<h1>Vendors</h1>
 			{groupedVendors.map((card, index) => (
 				<div
 					key={card.vendor_id}
@@ -53,7 +54,7 @@ const VendorCard = () => {
 					<AccordionCard>
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
-					<div className={styles.vendorData}>{/* <AccordionItem /> */}</div>
+					{/* <div className={styles.vendorData}></div> */}
 					{index === activeIndex && <AccordionItem />}
 				</div>
 			))}
