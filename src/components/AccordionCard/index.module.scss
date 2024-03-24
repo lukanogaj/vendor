@@ -19,5 +19,10 @@
 			display: flex;
 			flex-direction: column;
 		}
+
+		.open {
+			display: none;
+			background-color: red;
+		}
 	}
 }

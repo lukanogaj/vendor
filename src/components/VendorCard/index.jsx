@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
-// import AccordionItem from "../AccordionItem";
+import AccordionItem from "../AccordionItem";
 import { useState, useRef } from "react";
 import AccordionCard from "../AccordionCard";
 
@@ -37,15 +37,24 @@ const VendorCard = () => {
 	console.log(groupedVendors);
 
 	// Function to show div with input and details
+	const [activeIndex, setActiveIndex] = useState(-1);
+	const handleClick = (index) => {
+		setActiveIndex(index === activeIndex ? 0 : index);
+	};
 
 	return (
 		<div className={styles.hero}>
 			{groupedVendors.map((card, index) => (
-				<div key={card.vendor_id} className={styles.classContainer}>
+				<div
+					key={card.vendor_id}
+					className={styles.classContainer}
+					onClick={() => handleClick(index)}
+				>
 					<AccordionCard>
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
 					<div className={styles.vendorData}>{/* <AccordionItem /> */}</div>
+					{index === activeIndex && <AccordionItem />}
 				</div>
 			))}
 		</div>
