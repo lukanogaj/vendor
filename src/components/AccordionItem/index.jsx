@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const AccordionItem = () => {
 	return (
-		<div className={styles.form}>
+		<div className={styles.accordionItem}>
 			<div className={styles.dataCard}>
 				<label htmlFor="myInput">Name</label>
 				<input type="text" />
