@@ -1,6 +1,5 @@
 import { Children, useState } from "react";
-// import AccordionItem from "../AccordionItem";
-// import VendorData from "../VendorData";
+
 
 import styles from "./index.module.scss";
 import { ChevronUp, ChevronDown } from "../media/icons";
