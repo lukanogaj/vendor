@@ -1,10 +1,10 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
 import AccordionItem from "../AccordionItem";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import AccordionCard from "../AccordionCard";
 
-const VendorCard = () => {
+const VendorCard = ({ handleAccordion }) => {
 	const [isOpen, setIsOpen] = useState(null);
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -34,7 +34,33 @@ const VendorCard = () => {
 
 		groupedVendors.push(structure);
 	}
-	console.log(groupedVendors);
+
+	// Accordion component the one is not visible
+	const AccordionItem = ({ activeIndex }) => {
+		const [isOpen, setIsOpen] = useState(true);
+		const handleAccordion = () => {
+			setIsOpen(!isOpen);
+		};
+
+		return (
+			<div>
+				<div className={isOpen ? styles.accordionItem : styles.hidden}>
+					<div className={styles.dataCard}>
+						<label htmlFor="myInput">Name</label>
+						<input type="text" />
+						<label htmlFor="">Category</label>
+						<input type="text" />
+						<label htmlFor="">Address</label>
+						<input type="text" />
+						<label htmlFor="">Latitude</label>
+						<input type="text" />
+						<label htmlFor="">Longitude</label>
+						<input type="text" />
+					</div>
+				</div>
+			</div>
+		);
+	};
 
 	// Function to show div with input and details
 	const [activeIndex, setActiveIndex] = useState(-1);
@@ -43,7 +69,7 @@ const VendorCard = () => {
 	};
 
 	return (
-		<div className={styles.hero}>
+		<div className={styles.accordion}>
 			<h1>Vendors</h1>
 			{groupedVendors.map((card, index) => (
 				<div
@@ -55,7 +81,15 @@ const VendorCard = () => {
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
 					{/* <div className={styles.vendorData}></div> */}
-					{index === activeIndex && <AccordionItem />}
+					{index === activeIndex && (
+						<AccordionItem
+							handleAccordion={handleAccordion}
+							handleClick={handleClick}
+							// className={
+							// 	activeIndex === index ? styles.accordionItem : styles.hidden
+							// }
+						/>
+					)}
 				</div>
 			))}
 		</div>
