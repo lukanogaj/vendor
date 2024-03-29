@@ -37,27 +37,22 @@ const VendorCard = ({ handleAccordion }) => {
 
 	// Accordion component the one is not visible
 	const AccordionItem = ({ activeIndex }) => {
-		const [isOpen, setIsOpen] = useState(true);
-		const handleAccordion = () => {
-			setIsOpen(!isOpen);
-		};
-
 		return (
-			<div>
-				<div className={isOpen ? styles.accordionItem : styles.hidden}>
-					<div className={styles.dataCard}>
-						<label htmlFor="myInput">Name</label>
-						<input type="text" />
-						<label htmlFor="">Category</label>
-						<input type="text" />
-						<label htmlFor="">Address</label>
-						<input type="text" />
-						<label htmlFor="">Latitude</label>
-						<input type="text" />
-						<label htmlFor="">Longitude</label>
-						<input type="text" />
-					</div>
-				</div>
+			<div
+				className={
+					!activeIndex ? `${styles.accordionItem} ${styles.animated} ` : ""
+				}
+			>
+				<label htmlFor="myInput">Name</label>
+				<input type="text" />
+				<label htmlFor="">Category</label>
+				<input type="text" />
+				<label htmlFor="">Address</label>
+				<input type="text" />
+				<label htmlFor="">Latitude</label>
+				<input type="text" />
+				<label htmlFor="">Longitude</label>
+				<input type="text" />
 			</div>
 		);
 	};
@@ -81,15 +76,7 @@ const VendorCard = ({ handleAccordion }) => {
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
 					{/* <div className={styles.vendorData}></div> */}
-					{index === activeIndex && (
-						<AccordionItem
-							handleAccordion={handleAccordion}
-							handleClick={handleClick}
-							// className={
-							// 	activeIndex === index ? styles.accordionItem : styles.hidden
-							// }
-						/>
-					)}
+					{index === activeIndex && <AccordionItem />}
 				</div>
 			))}
 		</div>
