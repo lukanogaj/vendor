@@ -1,6 +1,6 @@
 .accordion {
 	display: flex;
-	// justify-content: space-between;
+	justify-content: space-between;
 	align-content: center;
 	align-items: center;
 	text-align: center;
@@ -19,21 +19,21 @@
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
-		align-items: center;
 		width: 100%;
 
 		.accordionItem {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			max-height: 0;
-			width: 98%;
+			max-height: 350px;
 			transition: max-height 5s ease-out;
+			width: 98%;
+			background-color: green;
 			// overflow: hidden;
 			border-radius: 4px;
 
 			&.animated {
-				max-height: 450px;
+				max-height: 350px;
 				transition: max-height 5s ease-in;
 				background-color: green;
 			}

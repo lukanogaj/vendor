@@ -1,11 +1,10 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
-import AccordionItem from "../AccordionItem";
+// import AccordionItem from "../AccordionItem";
 import { useState } from "react";
 import AccordionCard from "../AccordionCard";
 
-const VendorCard = ({ handleAccordion }) => {
-	const [isOpen, setIsOpen] = useState(null);
+const VendorCard = () => {
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
 		return (
@@ -16,7 +15,6 @@ const VendorCard = ({ handleAccordion }) => {
 		);
 	});
 
-	console.log(uniqueVendors);
 	// Function to group the obejct with same names
 	/// Array of objects nested structure tree
 	const groupedVendors = [];
@@ -35,12 +33,12 @@ const VendorCard = ({ handleAccordion }) => {
 		groupedVendors.push(structure);
 	}
 
-	// Accordion component the one is not visible
+	//Accordion component the one is not visible
 	const AccordionItem = ({ activeIndex }) => {
 		return (
 			<div
 				className={
-					!activeIndex ? `${styles.accordionItem} ${styles.animated} ` : ""
+					!activeIndex ? `${styles.accordionItem} ${styles.animated}` : ""
 				}
 			>
 				<label htmlFor="myInput">Name</label>
@@ -75,8 +73,17 @@ const VendorCard = ({ handleAccordion }) => {
 					<AccordionCard>
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
-					{/* <div className={styles.vendorData}></div> */}
-					{index === activeIndex && <AccordionItem />}
+
+					{index === activeIndex && (
+						<AccordionItem
+						// activeIndex={activeIndex}
+						// className={
+						// 	!activeIndex
+						// 		? `${styles.accordionItem} ${styles.animated} `
+						// 		: ""
+						// }
+						/>
+					)}
 				</div>
 			))}
 		</div>
