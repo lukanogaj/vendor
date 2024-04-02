@@ -1,7 +1,8 @@
 import styles from "./index.module.scss";
 import dataForVendors from "../../VendorDataArray";
+import { ChevronUp, ChevronDown } from "../media/icons";
 // import AccordionItem from "../AccordionItem";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import AccordionCard from "../AccordionCard";
 
 const VendorCard = () => {
@@ -34,7 +35,8 @@ const VendorCard = () => {
 	}
 
 	//Accordion component the one is not visible
-	const AccordionItem = ({ activeIndex }) => {
+	const AccordionItem = ({ activeIndex, isOpen }) => {
+		const contentHeight = useRef();
 		return (
 			<div
 				className={
@@ -59,6 +61,7 @@ const VendorCard = () => {
 	const [activeIndex, setActiveIndex] = useState(-1);
 	const handleClick = (index) => {
 		setActiveIndex(index === activeIndex ? -1 : index);
+		console.log("clicked");
 	};
 
 	return (
@@ -73,17 +76,9 @@ const VendorCard = () => {
 					<AccordionCard>
 						<h3>{card.vendor_name}</h3>
 					</AccordionCard>
-
-					{index === activeIndex && (
-						<AccordionItem
-						// activeIndex={activeIndex}
-						// className={
-						// 	!activeIndex
-						// 		? `${styles.accordionItem} ${styles.animated} `
-						// 		: ""
-						// }
-						/>
-					)}
+					<div className={styles.accordionDrop}>
+						{index === activeIndex && <AccordionItem />}
+					</div>
 				</div>
 			))}
 		</div>
