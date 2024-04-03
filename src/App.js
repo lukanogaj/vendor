@@ -1,11 +1,12 @@
 import "./App.css";
+import AccordionCard from "./components/AccordionCard";
 import Layout from "./components/Layout";
-import VendorCard from "./components/VendorCard";
+// import VendorCard from "./components/VendorCard";
 
 function App() {
 	return (
 		<Layout>
-			<VendorCard />
+			<AccordionCard />
 		</Layout>
 	);
 }

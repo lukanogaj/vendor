@@ -1,40 +1,40 @@
-.accordionContainer {
+.accordion {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	justify-content: space-between;
 	align-content: center;
-	// margin: auto;
+	// align-items: center;
+	// text-align: center;
+	flex-direction: column;
 	width: 100%;
-	height: 100%;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-	// background-color: linear-gradient(#bdc3c7, #2c3e50);
-	.card {
+	// height: 100%;
+	background-color: linear-gradient(#bdc3c7, #2c3e50);
+
+	.accordionHeader {
 		display: flex;
 		justify-content: space-between;
-		background-color: #2496b3;
+		flex-direction: column;
 		text-align: center;
-		align-items: center;
-		align-content: center;
-		width: 98%;
-		height: 60px;
-		margin: 3px;
-		// margin-left: 18px;
-		padding: 0 15px 0 15px;
-		cursor: pointer;
-		// overflow: hidden;
-		border-radius: 6px;
-		-webkit-border-radius: 6px;
-		-moz-border-radius: 6px;
-		-ms-border-radius: 6px;
-		-o-border-radius: 6px;
-		///////
-		.vendorData {
+
+		.accordionCard {
 			display: flex;
-			flex-direction: column;
+			background-color: #2496b3;
+			text-align: center;
+			align-items: center;
+			align-content: center;
+			width: 98%;
+			height: 60px;
+			margin: 3px;
+			// margin-left: 18px;
+			padding: 0 15px 0 15px;
+			cursor: pointer;
+			// overflow: hidden;
+			border-radius: 6px;
 		}
+	}
+
+	h1 {
+		letter-spacing: 0.04rem;
+		margin: 15px;
+		font-size: 4rem;
 	}
 }
