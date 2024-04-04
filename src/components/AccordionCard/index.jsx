@@ -1,23 +1,17 @@
 import styles from "./index.module.scss";
-import { Children, useState } from "react";
+import { useState } from "react";
 import dataForVendors from "../../VendorDataArray";
 
 import { ChevronUp, ChevronDown } from "../media/icons";
 
 const AccordionCard = ({ children }) => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [activeIndex, setActiveIndex] = useState(-1);
+	const [isOpen, setIsOpen] = useState(null);
+	const [activeIndex, setActiveIndex] = useState(null);
 	// On clicks functions
-	// Chevron function
-	const handleChevron = () => {
-		setIsOpen(!isOpen);
-		console.log("Clicked");
-	};
-
 	// Accordion OnCLick function
 	const handleClick = (index) => {
 		setActiveIndex(index === activeIndex ? -1 : index);
-		console.log("clicked");
+		// console.log("clicked");
 	};
 
 	/// Function to create unique values array
@@ -30,7 +24,7 @@ const AccordionCard = ({ children }) => {
 		);
 	});
 
-	// Function to group the obejct with same names
+	// Function to group the object with same names
 	/// Array of objects nested structure tree
 	const groupedVendors = [];
 	for (const uniq of uniqueVendors) {
@@ -52,25 +46,19 @@ const AccordionCard = ({ children }) => {
 		<div className={styles.accordion}>
 			<div className={styles.accordionHeader}>
 				<h1>Vendors</h1>
-				{groupedVendors.map((card, index) => (
+				{groupedVendors.map((card) => (
 					<div
 						key={card.vendor_id}
 						className={styles.accordionCard}
-						onClick={() => handleClick(index)}
+						onClick={() => handleClick(card.vendor_id)}
 					>
 						<h3>{card.vendor_name}</h3>
-						<div onClick={() => handleChevron()}>
-							{children}
-							<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
+						<div>
+							{activeIndex === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 						</div>
 					</div>
 				))}
 			</div>
-
-			{/* <div onClick={() => handleChevron()}>
-				{children}
-				<div>{isOpen ? <ChevronUp /> : <ChevronDown />}</div>
-			</div> */}
 		</div>
 	);
 };
