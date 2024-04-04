@@ -1,10 +1,11 @@
 import styles from "./index.module.scss";
 import { useState } from "react";
 import dataForVendors from "../../VendorDataArray";
+import AccordionItem from "../AccordionItem";
 
 import { ChevronUp, ChevronDown } from "../media/icons";
 
-const AccordionCard = ({ children }) => {
+const AccordionCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
 	const [activeIndex, setActiveIndex] = useState(null);
 	// On clicks functions

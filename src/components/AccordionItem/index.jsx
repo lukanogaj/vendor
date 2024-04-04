@@ -4,12 +4,8 @@ import dataForVendors from "../../VendorDataArray";
 
 //Accordion component the one is not visible
 const AccordionItem = () => {
-	const contentHeight = useRef();
 	return (
 		<div
-			className={
-				!activeIndex ? `${styles.accordionItem} ${styles.animated}` : ""
-			}
 		>
 			<label htmlFor="myInput">Name</label>
 			<input type="text" />
