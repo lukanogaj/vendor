@@ -3,30 +3,22 @@
 	justify-content: space-between;
 	align-content: center;
 	flex-direction: column;
-	width: 100%;
-	background-color: linear-gradient(#bdc3c7, #2c3e50);
+	width: 97%;
 
-	.accordionHeader {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		align-content: center;
+	.accordionCard {
+		background-color: #2496b3;
 		width: 97%;
-		.accordionCard {
-			background-color: #2496b3;
-			width: 97%;
+		// height: 60px;
+		margin-bottom: 10px;
 
-			.accordionCardInner {
-				display: flex;
-				justify-content: space-between;
-				height: 60px;
-				width: 100%;
-				text-align: center;
-				align-items: center;
-				padding-right: 10px;
-			}
+		.accordionCardInner {
+			display: flex;
+			justify-content: space-between;
+			height: 60px;
+			width: 100%;
+			text-align: center;
+			align-items: center;
+			padding-right: 10px;
 		}
 	}
 

@@ -1,4 +1,4 @@
-.accordionItem {
+.content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -9,10 +9,10 @@
 	padding-bottom: 10px;
 	overflow: hidden;
 
-	.animated {
-		max-height: 300px;
+	&.contentShow {
+		max-height: 400px;
 		transition: max-height 5s ease-in;
-		background-color: green;
+		background-color: #e8e8e8;
 	}
 
 	label {
@@ -21,7 +21,6 @@
 		margin-bottom: 5px;
 		padding: 8px 0px 8px 8px;
 	}
-
 	input {
 		background-color: #fff;
 		width: 50%;

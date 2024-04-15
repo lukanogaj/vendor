@@ -7,13 +7,9 @@ import { ChevronUp, ChevronDown } from "../media/icons";
 
 const AccordionCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
-	const [activeIndex, setActiveIndex] = useState(null);
+	const [selected, setSelected] = useState(null);
 	// On clicks functions
 	// Accordion OnCLick function
-	const handleClick = (index) => {
-		setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-		console.log("clicked");
-	};
 
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -44,27 +40,33 @@ const AccordionCard = () => {
 	}
 	console.log(groupedVendors);
 
+  // Function to change classes for the accordion content 
+
+const handleClick =(vendor_id){
+  setSelected(prev => === id? null: id)
+}
+
+
+
 	return (
 		<div className={styles.accordion}>
-			<div className={styles.accordionHeader}>
-				<h1>Vendors</h1>
-				{groupedVendors.map((card) => (
-					<div
-						key={card.vendor_id}
-						className={styles.accordionCard}
-						onClick={() => handleClick(card.vendor_id)}
-					>
-						<div className={styles.accordionCardInner}>
-							<h3>{card.vendor_name}</h3>
-							{activeIndex === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
-						</div>
-						<AccordionItem
-							activeIndex={activeIndex}
-							setIsActiveIndex={setActiveIndex}
-						/>
+			<h1>Vendors</h1>
+			{groupedVendors.map((card, vendor_id) => (
+				<div
+					key={card.vendor_id}
+					className={styles.accordionCard}
+					onClick={() => handleClick(vendor_id)}
+				>
+					<div className={styles.accordionCardInner}>
+						<h3>{card.vendor_name}</h3>
+						{selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>
-				))}
-			</div>
+					<AccordionItem
+						selected={selected}
+						// setIsActiveIndex={setActiveIndex}
+					/>
+				</div>
+			))}
 		</div>
 	);
 };
