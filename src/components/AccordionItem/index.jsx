@@ -5,9 +5,8 @@ import dataForVendors from "../../VendorDataArray";
 //Accordion component the one is not visible
 const AccordionItem = () => {
 	return (
-		<div
-		>
-			<label htmlFor="myInput">Name</label>
+		<div className={styles.accordionItem}>
+			<label type="text">Name</label>
 			<input type="text" />
 			<label htmlFor="">Category</label>
 			<input type="text" />

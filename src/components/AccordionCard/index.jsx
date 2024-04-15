@@ -57,6 +57,7 @@ const AccordionCard = () => {
 						<div>
 							{activeIndex === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 						</div>
+						<AccordionItem />
 					</div>
 				))}
 			</div>

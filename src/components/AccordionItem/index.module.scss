@@ -4,10 +4,10 @@
 	justify-content: center;
 	max-height: 350px;
 	transition: max-height 5s ease-out;
-	width: 98%;
+	width: 100%;
 	background-color: yellow;
 	// overflow: hidden;
-	border-radius: 4px;
+	// border-radius: 4px;
 
 	&.animated {
 		max-height: 350px;
