@@ -11,8 +11,8 @@ const AccordionCard = () => {
 	// On clicks functions
 	// Accordion OnCLick function
 	const handleClick = (index) => {
-		setActiveIndex(index === activeIndex ? -1 : index);
-		// console.log("clicked");
+		setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+		console.log("clicked");
 	};
 
 	/// Function to create unique values array
@@ -43,6 +43,7 @@ const AccordionCard = () => {
 		groupedVendors.push(structure);
 	}
 	console.log(groupedVendors);
+
 	return (
 		<div className={styles.accordion}>
 			<div className={styles.accordionHeader}>
@@ -53,11 +54,14 @@ const AccordionCard = () => {
 						className={styles.accordionCard}
 						onClick={() => handleClick(card.vendor_id)}
 					>
-						<h3>{card.vendor_name}</h3>
-						<div>
+						<div className={styles.accordionCardInner}>
+							<h3>{card.vendor_name}</h3>
 							{activeIndex === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 						</div>
-						<AccordionItem />
+						<AccordionItem
+							activeIndex={activeIndex}
+							setIsActiveIndex={setActiveIndex}
+						/>
 					</div>
 				))}
 			</div>

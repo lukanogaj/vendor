@@ -3,9 +3,13 @@ import { useState } from "react";
 import dataForVendors from "../../VendorDataArray";
 
 //Accordion component the one is not visible
-const AccordionItem = () => {
+const AccordionItem = ({ activeIndex, setIsActiveIndex }) => {
 	return (
-		<div className={styles.accordionItem}>
+		<div
+			className={
+				activeIndex ? `${styles.accordionItem} ${styles.animated}` : ""
+			}
+		>
 			<label type="text">Name</label>
 			<input type="text" />
 			<label htmlFor="">Category</label>
