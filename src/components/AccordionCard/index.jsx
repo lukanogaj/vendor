@@ -64,7 +64,7 @@ const AccordionCard = () => {
 						<h3>{card.vendor_name}</h3>
 						{selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>
-					<AccordionItem selected={selected} />
+					<AccordionItem selected={selected} vendor_id={card.vendor_id} />
 				</div>
 			))}
 		</div>

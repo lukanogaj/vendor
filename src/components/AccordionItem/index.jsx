@@ -1,12 +1,12 @@
 import styles from "./index.module.scss";
 
 //Accordion component the one is not visible
-const AccordionItem = ({ selected }) => {
-	// console.log(vendor_id);
+const AccordionItem = ({ selected, vendor_id }) => {
+	console.log(vendor_id);
 	return (
 		<div
 			className={
-				selected
+				vendor_id === selected
 					? `${styles.content} ${styles.contentShow}`
 					: `${styles.content}`
 			}
