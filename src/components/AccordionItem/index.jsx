@@ -1,11 +1,16 @@
 import styles from "./index.module.scss";
-import { useState } from "react";
-import dataForVendors from "../../VendorDataArray";
 
 //Accordion component the one is not visible
 const AccordionItem = ({ selected }) => {
+	// console.log(vendor_id);
 	return (
-		<div className={`${styles.content} ${styles.animated} }`}>
+		<div
+			className={
+				selected
+					? `${styles.content} ${styles.contentShow}`
+					: `${styles.content}`
+			}
+		>
 			<label type="text">Name</label>
 			<input type="text" />
 			<label htmlFor="">Category</label>

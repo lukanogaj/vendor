@@ -40,31 +40,31 @@ const AccordionCard = () => {
 	}
 	console.log(groupedVendors);
 
-  // Function to change classes for the accordion content 
+	// Function to change classes for the accordion content
 
-const handleClick =(vendor_id){
-  setSelected(prev => === id? null: id)
-}
-
-
+	const handleToogle = (id) => {
+		console.log("clicked", id);
+		if (id === selected) {
+			return setSelected(null);
+		} else {
+			setSelected(id);
+		}
+	};
 
 	return (
 		<div className={styles.accordion}>
 			<h1>Vendors</h1>
-			{groupedVendors.map((card, vendor_id) => (
+			{groupedVendors.map((card) => (
 				<div
-					key={card.vendor_id}
+					key={card.id}
 					className={styles.accordionCard}
-					onClick={() => handleClick(vendor_id)}
+					onClick={() => handleToogle(card.vendor_id)}
 				>
 					<div className={styles.accordionCardInner}>
 						<h3>{card.vendor_name}</h3>
 						{selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>
-					<AccordionItem
-						selected={selected}
-						// setIsActiveIndex={setActiveIndex}
-					/>
+					<AccordionItem selected={selected} />
 				</div>
 			))}
 		</div>

@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	max-height: 0;
-	transition: max-height 5s ease-out;
+	transition: max-height 2s ease-out;
 	width: 100%;
 	background-color: #e8e8e8;
 	padding-bottom: 10px;
@@ -11,7 +11,7 @@
 
 	&.contentShow {
 		max-height: 400px;
-		transition: max-height 5s ease-in;
+		transition: max-height 2s ease-in;
 		background-color: #e8e8e8;
 	}
 
