@@ -8,22 +8,22 @@
 	.accordionCard {
 		background-color: #2496b3;
 		width: 97%;
-		// height: 60px;
-		margin-bottom: 10px;
+		margin-bottom: 2px;
 
 		.accordionCardInner {
 			display: flex;
 			justify-content: space-between;
 			height: 60px;
 			width: 100%;
-			text-align: center;
 			align-items: center;
 			padding-right: 10px;
 		}
 	}
 
 	h1 {
+		display: block;
 		letter-spacing: 0.04rem;
+		text-align: center;
 		margin: 15px;
 		font-size: 4rem;
 	}
@@ -31,5 +31,9 @@
 	h3 {
 		display: inline-block;
 		margin-left: 10px;
+	}
+
+	img {
+		display: block;
 	}
 }

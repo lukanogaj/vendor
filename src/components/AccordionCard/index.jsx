@@ -8,8 +8,7 @@ import { ChevronUp, ChevronDown } from "../media/icons";
 const AccordionCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
 	const [selected, setSelected] = useState(null);
-	// On clicks functions
-	// Accordion OnCLick function
+	// Accordion OnClick function
 
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -38,12 +37,10 @@ const AccordionCard = () => {
 
 		groupedVendors.push(structure);
 	}
-	console.log(groupedVendors);
 
-	// Function to change classes for the accordion content
+	// Function to change classes for the accordion content and set the state for id form array data of objects
 
 	const handleToogle = (id) => {
-		console.log("clicked", id);
 		if (id === selected) {
 			return setSelected(null);
 		} else {
@@ -56,11 +53,12 @@ const AccordionCard = () => {
 			<h1>Vendors</h1>
 			{groupedVendors.map((card) => (
 				<div
-					key={card.id}
+					key={card.vendor_id}
 					className={styles.accordionCard}
 					onClick={() => handleToogle(card.vendor_id)}
 				>
 					<div className={styles.accordionCardInner}>
+						{/* <img src={card.logo_url} alt="" /> */}
 						<h3>{card.vendor_name}</h3>
 						{selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>

@@ -1,8 +1,7 @@
 import styles from "./index.module.scss";
 
-//Accordion component the one is not visible
+//Accordion component with content to be show and hide
 const AccordionItem = ({ selected, vendor_id }) => {
-	console.log(vendor_id);
 	return (
 		<div
 			className={

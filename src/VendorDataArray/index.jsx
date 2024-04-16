@@ -1,7 +1,7 @@
 const dataForVendors = [
 	{
 		id: "f2a563f0-06e7-4a0e-9bbe-632efd458ae3",
-		name: "Test 006",
+		name: ".bubble",
 		transaction_id: "515a2263-1045-445d-9050-d35acf73a333",
 		logo_url:
 			"https://epop-merchants-beta.s3.amazonaws.com/vendors/f2a563f0-06e7-4a0e-9bbe-632efd458ae3/epop-logo-01.svg",
@@ -559,3 +559,5 @@ const dataForVendors = [
 ];
 
 export default dataForVendors;
+
+console.log(dataForVendors.length);
