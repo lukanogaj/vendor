@@ -1,0 +1,35 @@
+.mediaButton {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-height: 0;
+	transition: max-height 4s ease-out;
+	width: 50%;
+	background-color: #e8e8e8;
+	padding-bottom: 1px;
+	overflow: hidden;
+	border: solid 3px;
+
+	&.animated {
+		max-height: 980px;
+		transition: max-height 4s ease-in;
+		background-color: #e8e8e8;
+	}
+
+	.circle {
+		background-color: #fff;
+		display: block;
+		// border: solid 3px;
+		// height: 70px;
+	}
+
+	.btnCancel {
+		background-color: red;
+		width: 50px;
+	}
+
+	.btnSave {
+		width: 50px;
+		background-color: green;
+	}
+}

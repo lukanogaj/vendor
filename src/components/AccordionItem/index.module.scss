@@ -1,18 +1,28 @@
+.accordionContainer {
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+}
+
 .content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	max-height: 0;
-	transition: max-height 2s ease-out;
-	width: 100%;
+	transition: max-height 4s ease-out;
+	width: 50%;
 	background-color: #e8e8e8;
 	padding-bottom: 1px;
 	overflow: hidden;
 
 	&.contentShow {
-		max-height: 400px;
-		transition: max-height 2s ease-in;
+		max-height: 980px;
+		transition: max-height 4s ease-in;
 		background-color: #e8e8e8;
+	}
+
+	.form {
+		background-color: yellow;
 	}
 
 	label {
