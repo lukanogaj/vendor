@@ -9,7 +9,6 @@ import { ChevronUp, ChevronDown } from "../media/icons";
 const AccordionCard = () => {
 	const [isOpen, setIsOpen] = useState(null);
 	const [selected, setSelected] = useState(null);
-	// Accordion OnClick function
 
 	/// Function to create unique values array
 	const uniqueVendors = dataForVendors.filter(function (item, index) {
@@ -59,7 +58,6 @@ const AccordionCard = () => {
 					onClick={() => handleToogle(card.vendor_id)}
 				>
 					<div className={styles.accordionCardInner}>
-						{/* <img src={card.logo_url} alt="" /> */}
 						<h3>{card.vendor_name}</h3>
 						{!selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>

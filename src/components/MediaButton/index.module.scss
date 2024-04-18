@@ -4,16 +4,16 @@
 	justify-content: space-around;
 	align-content: right;
 	max-height: 0;
-	transition: max-height 4s ease-out;
+	transition: max-height 1s ease-out;
 	width: 50%;
 	background-color: #e8e8e8;
 	padding-bottom: 1px;
 	padding-left: 440px;
 	overflow: hidden;
 
-	&.animated {
+	&.showMedia {
 		max-height: 980px;
-		transition: max-height 4s ease-in;
+		transition: max-height 1s ease-in;
 		background-color: #e8e8e8;
 	}
 
@@ -22,27 +22,29 @@
 		margin: auto;
 		background-color: #fff;
 		display: block;
-		width: 260px;
-		height: 260px;
-		padding-bottom: 100px;
+		width: 220px;
+		height: 220px;
+		padding-top: 20px;
 		text-align: center;
 		background-color: #2496b3;
 		border-radius: 15px;
-		// height: 70px;
 	}
 
 	.btn {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		align-items: center;
 		width: 260px;
 		height: 50px;
 		margin-left: 100px;
+		// padding-top: 5px;
+		padding-bottom: 5px;
 		.btnCancel {
 			display: block;
 			background-color: red;
 			width: 110px;
 			height: 35px;
+			border: 1px;
 			border-radius: 4px;
 		}
 
@@ -51,6 +53,7 @@
 			width: 110px;
 			height: 35px;
 			background-color: green;
+			border: 1px;
 			border-radius: 4px;
 		}
 	}

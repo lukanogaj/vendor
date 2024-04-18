@@ -1,7 +1,6 @@
 .accordion {
 	display: flex;
-	justify-content: space-between;
-	align-content: center;
+	justify-content: space-around;
 	flex-direction: column;
 	width: 97%;
 
@@ -20,8 +19,9 @@
 		}
 		.accordionToogles {
 			display: flex;
+			justify-content: flex-end;
 			width: 100%;
-			background-color: red;
+			background-color: #e8e8e8;
 		}
 	}
 

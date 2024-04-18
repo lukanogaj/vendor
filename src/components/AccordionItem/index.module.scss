@@ -1,29 +1,18 @@
-.accordionContainer {
-	display: flex;
-	justify-content: space-between;
-	background-color: #e8e8e8;
-	width: 100%;
-}
-
 .content {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	max-height: 0;
-	transition: max-height 4s ease-out;
+	transition: max-height 1s ease-out;
 	width: 50%;
 	background-color: #e8e8e8;
 	padding-bottom: 1px;
 	overflow: hidden;
 
 	&.contentShow {
+		width: 50%;
 		max-height: 980px;
-		transition: max-height 4s ease-in;
+		transition: max-height 1s ease-in;
 		background-color: #e8e8e8;
-	}
-
-	.form {
-		background-color: yellow;
 	}
 
 	label {
@@ -34,7 +23,7 @@
 	}
 	input {
 		background-color: #fff;
-		width: 50%;
+		width: 98%;
 		height: 45px;
 		margin: 4px 0px 4px 4px;
 		border: solid 1px;
