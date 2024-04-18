@@ -5,6 +5,7 @@ const MediaButton = (selected, vendor_id) => {
 	return (
 		<div
 			className={
+				// styles.mediaButton
 				vendor_id === selected
 					? `${styles.mediaButton} ${styles.animated}`
 					: `${styles.mediaButton}`
@@ -13,7 +14,8 @@ const MediaButton = (selected, vendor_id) => {
 			<div className={styles.circle}>
 				<Circles />
 			</div>
-			<div>
+			{/* <Circles /> */}
+			<div className={styles.btn}>
 				<button className={styles.btnCancel}>Cancel</button>
 				<button className={styles.btnSave}> Save</button>
 			</div>

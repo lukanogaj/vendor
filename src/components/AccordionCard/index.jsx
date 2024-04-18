@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 import { useState } from "react";
 import dataForVendors from "../../VendorDataArray";
 import AccordionItem from "../AccordionItem";
+import MediaButton from "../MediaButton";
 
 import { ChevronUp, ChevronDown } from "../media/icons";
 
@@ -60,9 +61,12 @@ const AccordionCard = () => {
 					<div className={styles.accordionCardInner}>
 						{/* <img src={card.logo_url} alt="" /> */}
 						<h3>{card.vendor_name}</h3>
-						{selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
+						{!selected === card.vendor_id ? <ChevronUp /> : <ChevronDown />}
 					</div>
-					<AccordionItem selected={selected} vendor_id={card.vendor_id} />
+					<div className={styles.accordionToogles}>
+						<AccordionItem selected={selected} vendor_id={card.vendor_id} />
+						<MediaButton selected={selected} vendor_id={card.vendor_id} />
+					</div>
 				</div>
 			))}
 		</div>

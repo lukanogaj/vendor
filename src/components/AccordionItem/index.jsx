@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import MediaButton from "../MediaButton";
+// import MediaButton from "../MediaButton";
 //Accordion component with content to be show and hide
 const AccordionItem = ({ selected, vendor_id }) => {
 	return (
@@ -22,7 +22,7 @@ const AccordionItem = ({ selected, vendor_id }) => {
 				<label htmlFor="">Longitude</label>
 				<input type="text" />
 			</div>
-			<MediaButton />
+			{/* <MediaButton /> */}
 		</div>
 	);
 };
